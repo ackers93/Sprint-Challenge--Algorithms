@@ -98,8 +98,9 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
+        # sets light on to allow the process to begin of working through while loops.
         self.set_light_on()
+        # checks
         self.swap_item()
         while self.light_is_on():
             self.set_light_off()
