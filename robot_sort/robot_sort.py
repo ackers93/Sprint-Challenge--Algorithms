@@ -100,16 +100,23 @@ class SortingRobot:
         """
         # sets light on to allow the process to begin of working through while loops.
         self.set_light_on()
-        # checks
+        # checks the first two items to see whether to swap cards.
         self.swap_item()
+        # while the light is on, the first while loop begins,
         while self.light_is_on():
+            # the light switches off, but the following processes run underneath it.
             self.set_light_off()
+            # as logn as it can move right, it will move right
             while self.can_move_right():
                 self.move_right()
+                # as it moves right, it will compare each item
+                # if it equals 1 the light will switch on and the robot will move on.
                 if self.compare_item() == 1:
                     self.set_light_on()
+                # if it does not equal one, it will swap the item
                 elif self.compare_item() == -1:
                     self.swap_item()
+            # same as above but left
             while self.can_move_left():
                 if self.compare_item() == 1:
                     self.swap_item()
@@ -117,6 +124,10 @@ class SortingRobot:
                     self.set_light_on()
                 self.move_left()
         self.swap_item()
+
+        # this works like bubble sort, and will continue to run back and forth
+        # until all is ordered. It's time complexity is not ideal due to
+        # the amount of times it has to run left and right to order.
 
 
 if __name__ == "__main__":

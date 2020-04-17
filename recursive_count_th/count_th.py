@@ -12,11 +12,19 @@ def count_th(word):
     word_length = len(word)
     # sets the length the searched for term for iteration purposes
     count = len(sub_string)
-    # TBC
-
+    # if the word is to small be be tested, if will return 0
     if word_length == 0 or word_length < count:
         return 0
+    # this checks if the word is contained in the selected letter until
+    # the end of the length of the 'count' varaible.
+    # if it is, 1 is added to a the call stack.
     elif word[0: count] == sub_string:
         return count_th(word[count - 1:]) + 1
+    # if it wasn't contianed in the previous selection,
+    # we will continue onto the next letter .
     else:
         return count_th(word[count - 1:])
+
+
+# Once it has run through each letter, it will piece by piece dismantle the call stack
+# as it goes it will count and return the amount of times that "sub_string" appears.

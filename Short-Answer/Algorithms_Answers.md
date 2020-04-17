@@ -2,11 +2,11 @@
 
 ## Exercise I
 
-a) O(n) as it increasely linearly to n
+a) O(n) as it increases linearly to n
 
 b) 0(n2) due to nested iteration.
 
-c) 0(n) as it's results are linearly related to it's input.
+c) O(n) as it's results are linearly related to it's input.
 
 ## Exercise II
 
